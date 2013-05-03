@@ -287,7 +287,7 @@ ConsoleSubMenu menuList[] = {
             {"Key Config", keyConfigFunc, 0, {}, 0},
             {"Manage Cheats", cheatFunc, 0, {}, 0},
             {"Fast Forward", fastForwardFunc, 2, {"Off","On"}, 0},
-            {"Console Output", consoleOutputFunc, 4, {"Off","Time","FPS+Time","Debug"}, 0},
+            {"Console Output", consoleOutputFunc, 4, {"Off","Time","FPS+Time","Debug"}, 3},
             {"NiFi", nifiEnableFunc, 2, {"Off","On"}, 0},
             {"Rumble Pak", setRumbleFunc, 4, {"Off","Low","Mid","High"}, 2},
             {"Save Settings", saveSettingsFunc, 0, {}, 0}
@@ -311,7 +311,7 @@ ConsoleSubMenu menuList[] = {
             {"Scaling", setScaleModeFunc, 3, {"Off","Aspect","Full"}, 0},
             {"Scale Filter", setScaleFilterFunc, 3, {"Off","Filter A","Filter B"}, 1},
             {"Custom Border", customBorderEnableFunc, 2, {"Off","On"}, 1},
-            {"SGB Borders", sgbBorderEnableFunc, 2, {"Off","On"}, 1}
+            {"SGB Borders", sgbBorderEnableFunc, 2, {"Off","On"}, 0}
         }
     },
     {

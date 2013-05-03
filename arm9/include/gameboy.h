@@ -11,7 +11,9 @@ extern int dividerCounter;
 extern int timerCounter;
 extern int serialCounter;
 extern int timerPeriod;
-extern long periods[4];
+extern int serialPeriod;
+extern int serialPeriods[2];
+extern int timerPeriods[4];
 
 extern int doubleSpeed;
 extern int cyclesToEvent;

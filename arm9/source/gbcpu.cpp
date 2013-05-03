@@ -109,7 +109,7 @@ int ime;
 void initCPU()
 {
     gbRegs.sp.w = 0xFFFE;
-    ime = 1;			// Correct default value?
+    ime = 0;			// Correct default value?
 
     halt = 0;
     setDoubleSpeed(0);
@@ -145,8 +145,8 @@ void initCPU()
 void enableInterrupts()
 {
     ime = 1;
-    if (ioRam[0x0f] & ioRam[0xff])
-        cyclesToExecute = 0;
+    //if (ioRam[0x0f] & ioRam[0xff])
+        //cyclesToExecute = 0;
 }
 
 void disableInterrupts()

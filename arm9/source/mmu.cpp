@@ -709,17 +709,13 @@ void writeIO(u8 ioReg, u8 val)
             return;
         case 0x02:
             {
+                if (gbMode == CGB)
+                    serialPeriod = serialPeriods[!!(val&2)];
+                else
+                    serialPeriod = serialPeriods[0];
                 ioRam[ioReg] = val;
-                if (!nifiEnabled) {
-                    if (val & 0x80 && val & 0x01) {
-                        serialCounter = clockSpeed/1024;
-                        if (cyclesToExecute > serialCounter)
-                            cyclesToExecute = serialCounter;
-                    }
-                    else
-                        serialCounter = 0;
+                if (!nifiEnabled)
                     return;
-                }
                 sendData = ioRam[0x01];
                 if (val & 0x80) {
                     if (transferWaiting) {
@@ -745,7 +741,7 @@ void writeIO(u8 ioReg, u8 val)
             ioRam[ioReg] = val;
             break;
         case 0x07:
-            timerPeriod = periods[val&0x3];
+            timerPeriod = timerPeriods[val&0x3];
             ioRam[ioReg] = val;
             break;
         case 0x10:

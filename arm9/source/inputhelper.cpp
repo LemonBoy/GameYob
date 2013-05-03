@@ -884,7 +884,8 @@ int loadState(int num) {
     ramEnabled = state.ramEnabled;
 
     transferReady = false;
-    timerPeriod = periods[ioRam[0x07]&0x3];
+    timerPeriod = timerPeriods[ioRam[0x07]&0x3];
+    serialPeriod = serialPeriods[!!(ioRam[0x02]&0x02)];
     cyclesToEvent = 1;
 
     mapMemory();
